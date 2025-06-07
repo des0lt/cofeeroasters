@@ -158,7 +158,7 @@ section {
 .cofee-descr {
     display: flex;
     align-items: center;
-    background-image: url('/assets/home/desktop/image-hero-coffeepress.jpg');
+    background-image: url('./assets/home/desktop/image-hero-coffeepress.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

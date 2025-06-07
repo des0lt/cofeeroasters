@@ -1,0 +1,369 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+:root {
+    --light-cream: #FEFCF7;
+    --dark-cyan: #0E8784;
+    --dark-grey: #2C343E;
+    --dark-grey-blue: #333D4B;
+    --pale-orange: #FDD6BA;
+    --grey: #83888F;
+}
+
+.fraunces-title-alternate-big-text, .fraunces-h1, .fraunces-h2, .fraunces-h3, .fraunces-h4, .barlow-body-text, .nav-menu-text {
+    font-style: normal;
+}
+
+.fraunces-title-alternate-big-text, .fraunces-h1, .fraunces-h2, .fraunces-h3, .fraunces-h4 {
+    font-family: Fraunces;
+}
+
+.barlow-body-text, .nav-menu-text {
+    font-family: Barlow;
+}
+
+.fraunces-h1, .fraunces-h2, .fraunces-h3, .fraunces-h4, .barlow-body-text {
+    color: var(--dark-grey-blue);
+}
+
+.fraunces-title-alternate-big-text, .fraunces-h1, .fraunces-h2, .fraunces-h3, .fraunces-h4 {
+    font-weight: 900;
+}
+
+.fraunces-title-alternate-big-text, .nav-menu-text {
+    color: var(--grey);
+}
+
+
+.fraunces-title-alternate-big-text {
+    font-size: 185px;
+    line-height: 72px; /* 48% */
+    text-transform: lowercase;
+}
+
+.fraunces-h1 {
+    font-size: 72px;
+    line-height: 72px; /* 100% */
+}
+
+.fraunces-h2 {
+    font-size: 40px;
+    line-height: 48px; /* 120% */
+}
+
+.fraunces-h3 {
+    font-size: 32px;
+    line-height: 36px; /* 112.5% */
+}
+
+.fraunces-h4 {
+    font-size: 24px;
+    line-height: 32px; /* 133.333% */
+}
+
+.barlow-body-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+}
+
+.light-text {
+    color: var(--light-cream);
+}
+
+.nav-menu-text {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px; /* 125% */
+    letter-spacing: 0.923px;
+    text-transform: uppercase;
+}
+
+.main-btn {
+    width: 217px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: var(--dark-cyan);
+    color: var(--light-cream);
+    font-family: Fraunces;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 25px; /* 138.889% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    &:hover {
+        background: #66D2CF;
+    }
+    &:disabled {
+        background: #E2DEDB;
+    }
+}
+
+body {
+    background-color: var(--light-cream);
+    padding: 0 80px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    img {
+        object-fit: contain;
+        width: 236px;
+    }
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover {
+            color: var(--dark-grey-blue);
+        }
+    }
+}
+
+header {
+    margin: 0 auto;
+    max-width: 1280px;
+    height: 113px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+section {
+    width: 100%;
+    padding: 0 85px;
+}
+
+.cofee-descr {
+    display: flex;
+    align-items: center;
+    background-image: url('/assets/home/desktop/image-hero-coffeepress.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    min-height: 600px;
+    div {
+        p {
+            max-width: 444px;
+            margin-top: 32px;
+            margin-bottom: 56px;
+            opacity: 0.8;
+        }
+    }
+}
+
+.our-collection {
+    position: relative;
+    text-align: center;
+    margin-top: 222px;
+    h2 {
+        position: relative;
+        padding-bottom: 0;
+        color: #a2a4a7;
+        &::after {
+            content: '';
+            position: absolute;
+            top: -6rem;
+            bottom: -3rem;
+            right: 0;
+            left: 0;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(254, 252, 247, 0.0001)), to(#fefcf7));
+            background-image: linear-gradient(rgba(254, 252, 247, 0.0001) 0%, #fefcf7 100%);
+        }
+    }
+    .collection-wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -10px;
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 255px;
+            height: 400px;
+            z-index: 2;
+            .collection-img {
+                height: 183px;
+                background-position: bottom;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .collection-descr {
+                h4 {
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+}
+
+.why-us {
+    position: relative;
+    margin-top: 200px;
+    padding: 100px 85px 0 85px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 577px;
+        background-color: var(--dark-grey);
+        z-index: -1;
+        border-radius: 10px;
+    }
+    h2, p {
+        color: var(--light-cream);
+        max-width: 540px;
+        margin-bottom: 32px;
+    }
+    .why-us-wrap {
+        width: 100%;
+        margin-top: 64px;
+        display: flex;
+        justify-content: space-between;
+        article {
+            width: 350px;
+            height: 382px;
+            background-color: var(--dark-cyan);
+            border-radius: 8px;
+            padding: 48px;
+            .why-us-img {
+                height: 104px;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .why-us-descr {
+                margin-top: 48px;
+                height: 134px;
+                h4 {
+                    margin-bottom: 24px;
+                    color: var(--light-cream);
+                }
+            }
+        }
+    }
+}
+
+.how-works {
+    margin: 200px 0px 200px 0px;
+    padding: 0 85px;
+    h4 {
+        color: var(--grey);;
+    }
+    div {
+        position: relative;
+        margin-top: 95px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 64px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--pale-orange);
+            z-index: 0;
+        }
+        article {
+            position: relative;
+            width: 285px;
+            padding-top: 82px;
+            .fraunces-h1 {
+                margin-bottom: 38px;
+                color: var(--pale-orange);
+            }
+            .fraunces-h3 {    
+                margin-bottom: 42px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 31px;
+                height: 31px;
+                background-color: var(--light-cream);
+                z-index: 1;
+                border: 2px solid var(--dark-cyan);
+                border-radius: 100%;
+                transform: translateY(-50%);
+            }
+            &:last-child {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--light-cream);
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin: 0 auto;
+    max-width: 1280px;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-grey);
+    margin-bottom: 88px;
+    padding: 0 85px;
+    div {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        gap: 103px;
+        .nav-bar {
+            a:hover {
+                color: var(--light-cream);
+            }
+        }
+        }
+    .shared {
+        justify-content: center;
+        gap: 24px;
+        a {
+            svg {
+                fill: var(--light-cream);   
+                &:hover {
+                    fill: var(--pale-orange);
+                }
+            }
+        }
+    }
+}

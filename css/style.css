@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    transition: 0.2s;
 }
 
 :root {
@@ -14,12 +13,16 @@
     --grey: #83888F;
 }
 
+.animated {
+    transition: 0.2s;
+}
+
 .fraunces-title-alternate-big-text, .fraunces-h1, .fraunces-h2, .fraunces-h3, .fraunces-h4, .barlow-body-text, .nav-menu-text {
     font-style: normal;
 }
 
 .fraunces-title-alternate-big-text, .fraunces-h1, .fraunces-h2, .fraunces-h3, .fraunces-h4 {
-    font-family: Fraunces;
+    font-family: "Fraunces", serif;
 }
 
 .barlow-body-text, .nav-menu-text {
@@ -37,7 +40,6 @@
 .fraunces-title-alternate-big-text, .nav-menu-text {
     color: var(--grey);
 }
-
 
 .fraunces-title-alternate-big-text {
     font-size: 185px;
@@ -90,7 +92,7 @@
     border-radius: 6px;
     background: var(--dark-cyan);
     color: var(--light-cream);
-    font-family: Fraunces;
+    font-family: "Fraunces", serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 900;
@@ -209,6 +211,18 @@ section {
                 background-position: bottom;
                 background-repeat: no-repeat;
                 background-size: contain;
+                &:nth-child(1) {
+                    background-image: url('./../assets/home/desktop/image-gran-espresso.png');
+                }
+                &:nth-child(2) {
+                    background-image: url('./assets/home/desktop/image-planalto.png');
+                }
+                &:nth-child(3) {
+                    background-image: url('./assets/home/desktop/image-piccollo.png');
+                }
+                &:nth-child(4) {
+                    background-image: url('./assets/home/desktop/image-danche.png');
+                }
             }
             .collection-descr {
                 h4 {
@@ -227,6 +241,7 @@ section {
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 32px;
     &::after {
         content: '';
         position: absolute;
@@ -241,7 +256,6 @@ section {
     h2, p {
         color: var(--light-cream);
         max-width: 540px;
-        margin-bottom: 32px;
     }
     .why-us-wrap {
         width: 100%;
@@ -259,6 +273,15 @@ section {
                 width: 100%;
                 background-position: center;
                 background-repeat: no-repeat;
+                &:nth-child(1) {
+                    background-image: url('./../assets/home/desktop/icon-coffee-bean.svg');
+                }
+                &:nth-child(2) {
+                    background-image: url('./../assets/home/desktop/icon-gift.svg');
+                }
+                &:nth-child(3) {
+                    background-image: url('./../assets/home/desktop/icon-truck.svg');
+                }
             }
             .why-us-descr {
                 margin-top: 48px;
@@ -273,12 +296,12 @@ section {
 }
 
 .how-works {
-    margin: 200px 0px 200px 0px;
+    margin: 200px 0px;
     padding: 0 85px;
     h4 {
         color: var(--grey);;
     }
-    div {
+    .how-works-wrap {
         position: relative;
         margin-top: 95px;
         display: flex;
@@ -362,6 +385,122 @@ footer {
                 fill: var(--light-cream);   
                 &:hover {
                     fill: var(--pale-orange);
+                }
+            }
+        }
+    }
+}
+
+.about-us {
+    min-height: 450px;
+    background-image: url('./../assets/about/desktop/image-hero-whitecup.jpg');
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 168px;
+    gap: 24px;
+    border-radius: 10px;
+    h2, p {
+        color: var(--light-cream);
+    }
+    p {
+        max-width: 445px;
+    }
+}
+
+.commitment {
+    min-height: 520px;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 168px;
+    .commitment-img {
+        border-radius: 8px;
+    }
+    .commitment-text {
+        display: flex;
+        flex-direction: column;
+        max-width: 540px;
+        gap: 32px;
+    }
+}
+
+.quality {
+    display: flex;
+    position: relative;
+    padding-bottom: 88px;
+    align-items: center;
+    margin-bottom: 168px;
+    gap: 80px;
+    justify-content: space-between;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 474px;
+        background-color: var(--dark-grey);
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        border-radius: 10px;
+    }
+    .quality-text {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding-top: 88px;
+        max-width: 540px;
+        h2, p {
+            color: var(--light-cream);
+        }
+    }
+    .quality-img {
+        border-radius: 8px;
+    }
+}
+
+.headquarters {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    margin-bottom: 168px;
+    h4 {
+        color: var(--grey);
+    }
+    .headquarters-wrap {
+        display: flex;
+        gap: 95px;
+        article {
+            width: 285px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            .headquarters-img {
+                height: 73px;
+                width: 73px;
+                background-repeat: no-repeat;
+            }
+            address a {
+                text-decoration: none;
+                color: var(--dark-grey-blue);
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            &:nth-child(1) {
+                .headquarters-img {
+                    background-image: url('./../assets/about/desktop/illustration-uk.svg');
+                }
+            }
+            &:nth-child(2) {
+                .headquarters-img {
+                    background-image: url('./../assets/about/desktop/illustration-canada.svg');
+                }
+            }          
+            &:nth-child(3) {
+                .headquarters-img {
+                    background-image: url('./../assets/about/desktop/illustration-australia.svg');
                 }
             }
         }

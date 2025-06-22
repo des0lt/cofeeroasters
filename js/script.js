@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
 
     const header = document.createElement('header');
     header.innerHTML = `
@@ -34,4 +33,3 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     `
     document.body.append(footer);
-})

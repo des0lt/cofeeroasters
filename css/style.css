@@ -516,6 +516,7 @@ footer {
     gap: 32px;
     background-image: url('./../assets/plan/desktop/image-hero-blackcup.jpg');
     margin-bottom: 168px;
+    border-radius: 10px;
     h1, p {
         color: var(--light-cream);
     }
@@ -530,6 +531,7 @@ footer {
     margin-bottom: 168px;
     padding-top: 100px;
     padding-bottom: 100px;
+    border-radius: 10px;
     .how-works-wrap {
         margin: 0;
         justify-content: left;
@@ -565,33 +567,40 @@ footer {
         display: flex;
         flex-direction: column;
         overflow: visible;
-        button {
-            display: flex;
-            gap: 25px;
-            padding: 24px 0;
-            border: none;
-            border-bottom: 1px solid var(--grey);
-            background: transparent;
-            opacity: 0.4;
-            cursor: pointer;
-            &:last-child {
-                border: none;
+        list-style: none;
+        padding-left: 0;
+        li {
+            a {
+                display: flex;
+                gap: 25px;
+                padding: 24px 0;
+                border-bottom: 1px solid var(--grey);
+                background: transparent;
+                opacity: 0.4;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.6;
+                }
+                &:active {
+                    opacity: 1;
+                }
             }
-            &:hover {
-                opacity: 0.6;
-            }
-            &:active {
+            a.active {
                 opacity: 1;
             }
-        }
-        button.active {
-            opacity: 1;
-        }
-        button.filled {
-            div {
-                color: var(--dark-cyan);
+            a.filled {
+                div {
+                    color: var(--dark-cyan);
+                }
             }
         }
+        li:last-child {
+            a {
+                border: none;       
+            }
+            
+        }
+         
     }
     .plan-form-wrap {
         width: 730px;
@@ -642,6 +651,7 @@ footer {
                     cursor: pointer;
                     opacity: 0;
                     transition: opacity 0.6s, background-color 0.2s;
+                    width: 33%;
                     &:hover {
                         background-color: var(--pale-orange);
                     }
@@ -671,4 +681,98 @@ footer {
             }
         }
     }
+    .order-summary-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: end;
+        .order-summary {
+            width: 100%;
+            padding: 27px 64px;
+            background-color: var(--dark-grey);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            h5 {
+                text-transform: uppercase;
+                color: #fff;
+                opacity: 0.5;
+            }
+            p, span {
+                color: #FFF;
+                font-size: 24px;
+                font-weight: 900;
+                line-height: 40px; /* 166.667% */
+            }
+            span {
+                color: var(--dark-cyan);
+            }
+        }
+        button {
+            border: none;
+            cursor: pointer;
+            &:disabled {
+                background-color: #E2DEDB;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* полупрозрачный чёрный */
+    z-index: 10;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    z-index: 11; /* выше, чем overlay */
+    border-radius: 8px;
+    max-width: 540px;
+    .header {
+        border-radius: 8px 8px 0px 0px;
+        background-color: var(--dark-grey-blue);
+        padding: 48px 56px 40px 56px;
+        h2 {
+            color: var(--light-cream);
+        }
+    }
+    .content {
+        padding: 56px;
+        .summary {
+            color: var(--grey);
+            margin-bottom: 7px;
+            span {
+                color: var(--dark-cyan);
+            }
+        }
+        .checkout {
+            margin-top: 47px;
+            display: flex;
+            justify-content: space-between;
+            button {
+                border: none;
+            }
+        }
+    }
+}
+
+.modal-window.active {
+    display: block;
 }

@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const formOptionWrap = document.querySelectorAll('.form-option-wrap'),
           formOptionWrapBtn = document.querySelectorAll('.form-option-wrap button'),
           formOptionLabel = document.querySelectorAll('.form-option label'),
-          planFormMenuBtn = document.querySelectorAll('.plan-form-menu button');
-
+          planFormMenuBtn = document.querySelectorAll('.plan-form-menu li a'),
+          createPlanBtn = document.getElementById('create-plan');
 
     dataNumAdd(formOptionWrap);
     dataNumAdd(planFormMenuBtn);
@@ -37,16 +37,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function nextQuestion() {
         for (let i = 0; i < formOptionWrap.length; i++) {
-            let isCheked = formOptionWrap[i].querySelector('input:checked');
-            if (!isCheked) {
+            let isChecked = formOptionWrap[i].querySelector('input:checked');
+            
+            if (!isChecked) {
                 addDataClass(formOptionWrap, i);
                 swithDataClass(planFormMenuBtn, i);
                 setTimeout(() => {
                     formOptionWrap[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
-                break
+                return;
             }
         }
+
+        const orderSummary = document.getElementById('order-summary');
+        setTimeout(() => {
+            orderSummary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+        createPlanBtn.disabled = false;
+    }
+
+    function orderSummery(dataNum, content) {
+        const orderSummarySpan = document.querySelectorAll('.order-summary p span')
+        orderSummarySpan[dataNum].innerHTML = content
     }
 
     formOptionWrapBtn.forEach((element, i) => {
@@ -63,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
             planFormMenuBtn[num].classList.add('filled');
             swithDataClass(planFormMenuBtn, num);
             nextQuestion();
+            let inputValue = element.querySelector('input').value;
+            orderSummery(num, inputValue)
         })
     })
 
@@ -76,4 +90,64 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100);
         })
     })
+
+    const overlay = document.querySelector('.overlay'),
+          modalWindow = document.querySelector('.modal-window'),
+          modalWindowContentText = document.querySelector('.modal-window .content .summary'),
+          orderSummary = document.querySelector('.order-summary p'),
+          totalPrice = document.getElementById('total-price'),
+          checkoutBtn = document.getElementById('checkout')
+
+    function openModal() {
+        modalWindowContentText.innerHTML = orderSummary.innerHTML;
+        let priceSelector = document.querySelector('.price-selector label input:checked').value;
+        let price = ''
+        switch (priceSelector) {
+            case 'Every Week':
+                price = `7.20`
+                break;
+            case 'Every 2 Weeks':
+                price = `9.60`
+                break;
+            case 'Every Month':
+                price = `12.00`
+                break;
+            default:
+                price = `-`
+        }
+        totalPrice.innerHTML = `$${price}/ mo`
+        modalWindow.classList.add('active');
+        overlay.classList.add('active');
+    }
+
+    createPlanBtn.addEventListener('click', () => {
+        openModal();
+    })
+
+    function closeModal() {
+        modalWindow.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+    
+
+    overlay.addEventListener('click', () => {
+        closeModal()
+    })
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+        if (e.key === 'Enter') {
+            if (modalWindow.classList.contains('active')) {
+                checkoutBtn.click();
+            } else {
+                if (createPlanBtn.disabled === false) {
+                    openModal();
+                } 
+            }
+                
+        }
+    });
+
 });

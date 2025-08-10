@@ -201,13 +201,13 @@ header {
         border: none;
         width: 50px;
         height: 50px;
-        background-image: url("/assets/shared/mobile/icon-hamburger.svg");
+        background-image: url("../assets/shared/mobile/icon-hamburger.svg");
         background-repeat: no-repeat;
         background-position: right center;
     }
 
     .hamburger.opened {
-        background-image: url("/assets/shared/mobile/icon-close.svg");
+        background-image: url("../assets/shared/mobile/icon-close.svg");
     }
 }
 
@@ -340,19 +340,19 @@ section {
         }
 
         article:nth-of-type(1) .collection-img {
-            background-image: url('/assets/home/desktop/image-gran-espresso.png');
+            background-image: url('../assets/home/desktop/image-gran-espresso.png');
         }
 
         article:nth-of-type(2) .collection-img {
-            background-image: url('/assets/home/desktop/image-planalto.png');
+            background-image: url('../assets/home/desktop/image-planalto.png');
         }
 
         article:nth-of-type(3) .collection-img {
-            background-image: url('/assets/home/desktop/image-piccollo.png');
+            background-image: url('../assets/home/desktop/image-piccollo.png');
         }
 
         article:nth-of-type(4) .collection-img {
-            background-image: url('/assets/home/desktop/image-danche.png');
+            background-image: url('../assets/home/desktop/image-danche.png');
         }
     }
 }
@@ -422,15 +422,15 @@ section {
             }
 
             &:nth-child(1) .why-us-img {
-                background-image: url('/assets/home/desktop/icon-coffee-bean.svg');
+                background-image: url('../assets/home/desktop/icon-coffee-bean.svg');
             }
 
             &:nth-child(2) .why-us-img {
-                background-image: url('/assets/home/desktop/icon-gift.svg');
+                background-image: url('../assets/home/desktop/icon-gift.svg');
             }
 
             &:nth-child(3) .why-us-img {
-                background-image: url('/assets/home/desktop/icon-truck.svg');
+                background-image: url('../assets/home/desktop/icon-truck.svg');
             }
         }
 
@@ -583,7 +583,7 @@ footer {
     .commitment-img {
         min-width: 445px;
         min-height: 520px;
-        background-image: url('/assets/about/desktop/image-commitment.jpg');
+        background-image: url('../assets/about/desktop/image-commitment.jpg');
         border-radius: 8px;
     }
 
@@ -637,7 +637,7 @@ footer {
         border-radius: 8px;
         min-width: 445px;
         min-height: 474px;
-        background-image: url('/assets/about/desktop/image-quality.jpg');
+        background-image: url('../assets/about/desktop/image-quality.jpg');
     }
 }
 
@@ -1122,7 +1122,7 @@ footer {
     }
 
     .coffe-descr {
-        background-image: url('/assets/home/tablet/image-hero-coffeepress.jpg');
+        background-image: url('../assets/home/tablet/image-hero-coffeepress.jpg');
 
         div {
             p {
@@ -1132,7 +1132,7 @@ footer {
     }
 
     .about-us {
-        background-image: url('/assets/about/tablet/image-hero-whitecup.jpg');
+        background-image: url('../assets/about/tablet/image-hero-whitecup.jpg');
         background-size: cover;
         min-height: 400px;
         margin-bottom: 144px;
@@ -1221,7 +1221,7 @@ footer {
         .quality-img {
             min-height: 320px;
             width: 100%;
-            background-image: url('/assets/about/tablet/image-quality.jpg');
+            background-image: url('../assets/about/tablet/image-quality.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -1276,7 +1276,7 @@ footer {
     .create-plan {
         gap: 24px;
         margin-bottom: 144px;
-        background-image: url('/assets/plan/tablet/image-hero-blackcup.jpg');
+        background-image: url('../assets/plan/tablet/image-hero-blackcup.jpg');
         background-size: cover;
         min-height: 400px;
 
@@ -1356,7 +1356,7 @@ footer {
 
         .commitment-img {
             width: 100%;
-            background-image: url('/assets/about/mobile/image-commitment.jpg');
+            background-image: url('../assets/about/mobile/image-commitment.jpg');
             background-size: cover;
             background-position: bottom;
         }
@@ -1396,7 +1396,7 @@ footer {
         padding: 100px 24px;
         text-align: center;
         justify-content: center;
-        background-image: url('/assets/home/mobile/image-hero-coffeepress.jpg');
+        background-image: url('../assets/home/mobile/image-hero-coffeepress.jpg');
 
         div {
             display: flex;
@@ -1520,7 +1520,7 @@ footer {
         min-height: 400px;
         text-align: center;
         align-items: center;
-        background-image: url('/assets/about/mobile/image-hero-whitecup.jpg');
+        background-image: url('../assets/about/mobile/image-hero-whitecup.jpg');
         background-size: cover;
         margin-bottom: 120px;
 
@@ -1545,7 +1545,7 @@ footer {
         }
 
         .quality-img {
-            background-image: url('/assets/about/mobile/image-quality.jpg');
+            background-image: url('../assets/about/mobile/image-quality.jpg');
             width: 100%;
             max-height: 156px;
             height: 156px;
@@ -1594,7 +1594,7 @@ footer {
     .create-plan {
         text-align: center;
         align-items: center;
-        background-image: url('/assets/plan/mobile/image-hero-blackcup.jpg');
+        background-image: url('../assets/plan/mobile/image-hero-blackcup.jpg');
         padding: 0 24px;
         margin-bottom: 120px;
     }

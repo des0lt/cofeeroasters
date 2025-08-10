@@ -181,7 +181,7 @@ header {
     width: 100%;
     padding: 40px 40px;
     z-index: 9999999999;
-    background-color: white;
+    background-color: var(--light-cream);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -979,7 +979,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: var(--light-cream);
     z-index: 11;
     /* выше, чем overlay */
     border-radius: 8px;

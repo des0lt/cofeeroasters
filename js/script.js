@@ -1,17 +1,35 @@
 
-    const header = document.createElement('header');
-    header.innerHTML = `
-        <a href="" class="logo-link"><img src="./assets/shared/desktop/logo.svg" alt="Coffeeroasters logotype"></a>
-        <nav class="nav-bar">
-            <a href="./" class="nav-menu-text animated">home</a>
-            <a href="./about.html" class="nav-menu-text animated">about us</a>
-            <a href="./plan.html" class="nav-menu-text animated">create your plan</a>
-        </nav>
+const header = document.createElement('header');
+header.innerHTML = `
+        <div class="content">
+            <a href="./" class="logo-link"><img src="./assets/shared/desktop/logo.svg" alt="Coffeeroasters logotype"></a>
+            <nav class="nav-bar">
+                <a href="./" class="nav-menu-text animated">home</a>
+                <a href="./about.html" class="nav-menu-text animated">about us</a>
+                <a href="./plan.html" class="nav-menu-text animated">create your plan</a>
+            </nav>
+            <button class="hamburger"></button>
+        </div>
     `
-    document.body.prepend(header);
+document.body.prepend(header);
 
-    const footer = document.createElement('footer');
-    footer.innerHTML = `
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('hide');
+    } else {
+        header.classList.remove('hide');
+    }
+
+    lastScroll = currentScroll;
+});
+
+const footer = document.createElement('footer');
+footer.innerHTML = `
         <div class="footer-links">
             <a href="" class="logo-link"><img src="./assets/shared/desktop/logo-white.svg" alt="Coffeeroasters logotype"></a>
             <div class="nav-bar">
@@ -32,4 +50,28 @@
             </a>
         </div>
     `
-    document.body.append(footer);
+document.body.append(footer);
+
+const mobileNav = document.createElement('nav');
+mobileNav.classList.add('mobile-nav')
+mobileNav.innerHTML = `
+        <a href="./" class="fraunces-h4 animated">Home</a>
+        <a href="./about.html" class="fraunces-h4 animated">About Us</a>
+        <a href="./plan.html" class="fraunces-h4 animated">Create Your Plan</a>
+        <div class="click-area"></div>
+    `
+document.body.prepend(mobileNav);
+
+const hamburger = document.querySelector('.hamburger');
+hamburger.addEventListener('click', () => {
+    mobileNav.classList.toggle('opened');
+    hamburger.classList.toggle('opened')
+    document.body.classList.toggle('noscroll')
+})
+
+const clickArea = document.querySelector('.click-area');
+clickArea.addEventListener('click', () => {
+    mobileNav.classList.remove('opened');
+    hamburger.classList.remove('opened')
+    document.body.classList.remove('noscroll')
+})

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formOptionWrap = document.querySelectorAll('.form-option-wrap'),
-          formOptionWrapBtn = document.querySelectorAll('.form-option-wrap button'),
-          formOptionLabel = document.querySelectorAll('.form-option label'),
-          planFormMenuBtn = document.querySelectorAll('.plan-form-menu li a'),
-          createPlanBtn = document.getElementById('create-plan');
+        formOptionWrapBtn = document.querySelectorAll('.form-option-wrap button'),
+        formOptionLabel = document.querySelectorAll('.form-option label'),
+        planFormMenuBtn = document.querySelectorAll('.plan-form-menu li a'),
+        createPlanBtn = document.getElementById('create-plan');
 
     dataNumAdd(formOptionWrap);
     dataNumAdd(planFormMenuBtn);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function nextQuestion() {
         for (let i = 0; i < formOptionWrap.length; i++) {
             let isChecked = formOptionWrap[i].querySelector('input:checked');
-            
+
             if (!isChecked) {
                 addDataClass(formOptionWrap, i);
                 swithDataClass(planFormMenuBtn, i);
@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const overlay = document.querySelector('.overlay'),
-          modalWindow = document.querySelector('.modal-window'),
-          modalWindowContentText = document.querySelector('.modal-window .content .summary'),
-          orderSummary = document.querySelector('.order-summary p'),
-          totalPrice = document.getElementById('total-price'),
-          checkoutBtn = document.getElementById('checkout')
+        modalWindow = document.querySelector('.modal-window'),
+        modalWindowContentText = document.querySelector('.modal-window .content .summary'),
+        orderSummary = document.querySelector('.order-summary p'),
+        totalPrice = document.getElementById('total-price'),
+        checkoutBtn = document.getElementById('checkout')
 
     function openModal() {
         modalWindowContentText.innerHTML = orderSummary.innerHTML;
@@ -115,9 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
             default:
                 price = `-`
         }
-        totalPrice.innerHTML = `$${price}/ mo`
+        if (window.innerWidth < 717) {
+            checkoutBtn.innerHTML = `Chekout - $${price}/ mo`
+        } else {
+            totalPrice.innerHTML = `$${price}/ mo`
+        }
+        
         modalWindow.classList.add('active');
         overlay.classList.add('active');
+        document.body.classList.add('noscroll');
     }
 
     createPlanBtn.addEventListener('click', () => {
@@ -127,8 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal() {
         modalWindow.classList.remove('active');
         overlay.classList.remove('active');
+        document.body.classList.remove('noscroll');
     }
-    
+
 
     overlay.addEventListener('click', () => {
         closeModal()
@@ -144,9 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 if (createPlanBtn.disabled === false) {
                     openModal();
-                } 
+                }
             }
-                
+
         }
     });
 

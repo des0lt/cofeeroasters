@@ -177,7 +177,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    right:auto;
+    right: auto;
     width: 100%;
     padding: 40px 40px;
     z-index: 9999999999;
@@ -1030,7 +1030,8 @@ footer {
     }
 
     body {
-        padding: 0px 40px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     section {
@@ -1113,6 +1114,7 @@ footer {
     body {
         padding-top: 119px;
     }
+
     .why-us {
         margin-top: 144px;
     }
@@ -1379,6 +1381,7 @@ footer {
     header {
         width: 100%;
         padding: 32px 24px;
+
         .hamburger {
             display: block;
         }

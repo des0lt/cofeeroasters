@@ -1,9 +1,12 @@
+import { disableScroll, enableScroll } from './switchScroll.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const formOptionWrap = document.querySelectorAll('.form-option-wrap'),
         formOptionWrapBtn = document.querySelectorAll('.form-option-wrap button'),
         formOptionLabel = document.querySelectorAll('.form-option label'),
         planFormMenuBtn = document.querySelectorAll('.plan-form-menu li a'),
         createPlanBtn = document.getElementById('create-plan');
+        const header = document.querySelector('header');
 
     dataNumAdd(formOptionWrap);
     dataNumAdd(planFormMenuBtn);
@@ -123,7 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         modalWindow.classList.add('active');
         overlay.classList.add('active');
-        document.body.classList.add('noscroll');
+        header.classList.add('hide');
+        disableScroll();
     }
 
     createPlanBtn.addEventListener('click', () => {
@@ -134,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalWindow.classList.remove('active');
         overlay.classList.remove('active');
         document.body.classList.remove('noscroll');
+        enableScroll();
     }
 
 

@@ -1,3 +1,4 @@
+import { disableScroll, enableScroll } from './switchScroll.js';
 
 const header = document.createElement('header');
 header.innerHTML = `
@@ -31,7 +32,7 @@ window.addEventListener('scroll', () => {
 const footer = document.createElement('footer');
 footer.innerHTML = `
         <div class="footer-links">
-            <a href="" class="logo-link"><img src="./assets/shared/desktop/logo-white.svg" alt="Coffeeroasters logotype"></a>
+            <a href="./" class="logo-link"><img src="./assets/shared/desktop/logo-white.svg" alt="Coffeeroasters logotype"></a>
             <div class="nav-bar">
                 <a href="./" class="nav-menu-text animated">home</a>
                 <a href="./about.html" class="nav-menu-text animated">about us</a>
@@ -62,16 +63,28 @@ mobileNav.innerHTML = `
     `
 document.body.prepend(mobileNav);
 
+function openMenu() {
+    mobileNav.classList.add('opened');
+    hamburger.classList.add('opened')
+    disableScroll();
+}
+
+function closeMenu() {
+    mobileNav.classList.remove('opened');
+    hamburger.classList.remove('opened')
+    enableScroll();
+}
+
 const hamburger = document.querySelector('.hamburger');
 hamburger.addEventListener('click', () => {
-    mobileNav.classList.toggle('opened');
-    hamburger.classList.toggle('opened')
-    document.body.classList.toggle('noscroll')
+    if (mobileNav.classList.contains('opened')) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
 })
 
 const clickArea = document.querySelector('.click-area');
 clickArea.addEventListener('click', () => {
-    mobileNav.classList.remove('opened');
-    hamburger.classList.remove('opened')
-    document.body.classList.remove('noscroll')
+    closeMenu();
 })

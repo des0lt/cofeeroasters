@@ -185,7 +185,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, padding-right 0s;
 
     .content {
         max-width: 1280px;
@@ -719,7 +719,8 @@ footer {
 }
 
 .how-works-dark {
-    background-color: var(--dark-grey);
+    background-image: url('../assets/plan/desktop/bg-steps.png');
+    background-size: cover;
     margin-bottom: 168px;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -766,7 +767,7 @@ footer {
     .plan-form-menu {
         position: sticky;
         align-self: flex-start;
-        top: 70px;
+        top: 90px;
         margin-top: -24px;
         min-width: 255px;
         display: flex;
@@ -785,8 +786,18 @@ footer {
                 opacity: 0.4;
                 cursor: pointer;
 
+                div,
+                p {
+                    transition: 0.2s ease-in-out;
+                }
+
                 &:hover {
                     opacity: 0.6;
+
+                    div,
+                    p {
+                        transform: translateX(5px);
+                    }
                 }
 
                 &:active {
@@ -919,7 +930,8 @@ footer {
         .order-summary {
             width: 100%;
             padding: 27px 64px;
-            background-color: var(--dark-grey);
+            background-image: url('../assets/plan/desktop/bg-order-summary.png');
+            background-size: cover;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -965,7 +977,6 @@ footer {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    /* полупрозрачный чёрный */
     z-index: 10;
 }
 
@@ -981,14 +992,14 @@ footer {
     transform: translate(-50%, -50%);
     background: var(--light-cream);
     z-index: 11;
-    /* выше, чем overlay */
     border-radius: 8px;
     max-width: 540px;
     width: calc(100% - 48px);
 
     .header {
         border-radius: 8px 8px 0px 0px;
-        background-color: var(--dark-grey-blue);
+        background-image: url('../assets/plan/desktop/bg-modal-top.png');
+        background-size: cover;
         padding: 48px 56px 40px 56px;
 
         h2 {
@@ -1291,6 +1302,7 @@ footer {
         width: calc(100% + 80px);
         margin: 0px -40px 144px -40px;
         padding: 97px 40px 70px 40px;
+        background-image: url('../assets/plan/tablet/bg-steps.png');
 
         .how-works-wrap {
             gap: 10px;
@@ -1606,6 +1618,7 @@ footer {
         padding: 80px 24px;
         width: calc(100% + 48px);
         margin: 0px -24px 120px -24px;
+        background-image: url('../assets/plan/mobile/bg-steps.png');
 
         .how-works-wrap {
             flex-direction: column;
@@ -1684,6 +1697,7 @@ footer {
 
             .order-summary {
                 padding: 32px 24px;
+                background-image: url('../assets/plan/mobile/bg-order-summary.png');
             }
         }
 
